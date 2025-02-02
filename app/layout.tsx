@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "next-themes";
-import Header from "../components/header";
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import {
+  ClerkProvider,
+} from '@clerk/nextjs'
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { ThemeProvider } from "next-themes";
+import Navbar from "@/components/navbar";
+import { Exo_2 } from "next/font/google";
+
+const exo2 = Exo_2({
+  
+  subsets: ['latin'],
+  
+  variable: '--font-exo-2',
+})
 
 export const metadata: Metadata = {
   title: "AspireAI",
@@ -24,24 +27,35 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider>
     <html lang="en" suppressHydrationWarning>
-        <head />
-        <body>
+      
+        
+        <body className={`${exo2.variable} font-sans_serif`}>
+        <Navbar />
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >
-            <Header>header</Header>
-            <main className="min-h-screen">{children}</main>
+            
+            <main className="min-h-screen">
+              {children}
+              </main>
+            
             <footer className='bg-muted/50 py-12'>
               <div className='container mx-auto px-4 text-center text-gray-200'>
               <p>FOOTER</p>
               </div>
               </footer>
           </ThemeProvider>
-      </body>
-    </html>
+          
+    
+          
+        </body>
+      </html>
+    </ClerkProvider>
+   
   );
 }
