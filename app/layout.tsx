@@ -44,7 +44,7 @@ export default function RootLayout({
               {children}
               </main>
             
-            <footer className='bg-muted/50 py-12'>
+            <footer className=' py-12 bg-gradient-to-tl from-purple-900/10 to-purple-950/100'>
               <div className='container mx-auto px-4 text-center text-gray-200'>
               <p>FOOTER</p>
               </div>

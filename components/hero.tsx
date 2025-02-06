@@ -1,59 +1,81 @@
 "use client"
+import { 
+  Rocket, 
+  Users, 
+  Brain,
+  ArrowRight,
+  Star,
+  FileText 
+} from 'lucide-react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
-import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
-
-
-export default function Hero() {
+export default function Home() {
   return (
-    <div className="relative min-h-[calc(100vh-76px)] flex items-center">
-      {/* Floating papers background */}
-      <div className="absolute inset-0 overflow-hidden">
-     
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-             Elevate Your Career with 
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-                {" "}
-                AI Power 
-              </span>
-              🚀
-            </h1>
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-gray-400 text-xl mb-8 max-w-2xl mx-auto"
+    <div className="text-white">
+      <div className="py-32 pt-60 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 "></div>
+        <div className="max-w-7xl mx-auto text-center relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8 }}
+            className="inline-block mb-4 px-4 py-1 bg-purple-900/30 rounded-full border border-purple-500/20"
           >
-            Get personalized resume feedback, practice mock interviews, and stay ahead with industry trends—all in one smart career coach.
+            <span className="text-purple-400">AI-Powered Career Growth</span>
+          </motion.div>
+          
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl md:text-7xl font-bold mb-6"
+          >
+            Elevate Your Career with{' '}
+            <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
+              AI Power <motion.span animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 4 }}><Rocket className="inline h-12 w-12" /></motion.span>
+            </span>
+          </motion.h1>
+          
+          <motion.p 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            transition={{ duration: 1, delay: 0.4 }}
+            className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto"
+          >
+            Get personalized resume feedback, practice mock interviews, and stay
+            ahead with industry trends—all in one smart career coach.
           </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }} 
+            animate={{ opacity: 1, scale: 1 }} 
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white px-8">
-              
-              Get Started  →
-            </Button>
-            
+            <Link
+              href="/dashboard"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors inline-flex items-center justify-center gap-2"
+            >
+              Get Started <ArrowRight className="h-5 w-5" />
+            </Link>
           </motion.div>
+          
+          
         </div>
       </div>
-
-      {/* Animated robot */}
-      <div className="absolute bottom-0 right-0 w-96 h-96">
-      
-      </div>
     </div>
-  )
+  );
 }
 
+const StatItem = ({ number, text }: { number: string; text: string }) => (
+  <motion.div 
+    initial={{ opacity: 0, y: 10 }} 
+    animate={{ opacity: 1, y: 0 }} 
+    transition={{ duration: 0.6 }}
+    className="text-center"
+  >
+    <div className="text-3xl font-bold mb-1">{number}</div>
+    <div className="text-gray-400 text-sm">{text}</div>
+  </motion.div>
+);

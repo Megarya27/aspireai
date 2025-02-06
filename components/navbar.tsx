@@ -1,6 +1,7 @@
 "use client"
 import {
     ClerkProvider,
+    SignIn,
     SignInButton,
     SignedIn,
     SignedOut,
@@ -25,26 +26,52 @@ export default function Navbar() {
       </Link>
 
       <div className="hidden md:flex items-center space-x-8">
-        <NavLink href="/features">Features</NavLink>
-        <NavLink href="/how-it-works">How it Works</NavLink>
-        <NavLink href="/examples">Examples</NavLink>
-        <NavLink href="/pricing">Pricing</NavLink>
+        <NavLink href="/resume-optimiser">Resume Optimiser</NavLink>
+        <NavLink href="/interview-prep">Interview Prep</NavLink>
+        <NavLink href="/cover-letter-generator">Cover Letter Generator</NavLink>
+        <NavLink href="/career-advisor">Career Advisor</NavLink>
       </div>
 
-      <div className="hidden md:flex items-center space-x-4">
+      
         
-          <div className='text-white hover:text-purple-400 hover:bg-white pt-2 pl-4 pr-4 pb-2 rounded-xl'><SignedOut>
-          <SignInButton />
+          <div>
+            <SignedOut>
+            
+          <SignInButton>
+            <Button  className='hover:bg-purple-400 '>Sign In</Button>
+            
+          </SignInButton>
+          
         </SignedOut>
+        <div>
         <SignedIn>
-          <UserButton />
-        </SignedIn> </div>
+        <Link href="/dashboard"></Link>
+          <UserButton
+          appearance={{
+            elements: {
+               avatarBox: 'w-10 h-10',
+                avatarImage: 'w-full h-full object-cover',
+                userButton: 'text-white',
+                userButtonContent: 'flex items-center space-x-2',
+                userButtonName: 'font-medium',
+                userButtonEmail: 'text-gray-300',
+                userButtonDropdown: 'bg-white text-black',
+                userButtonPopoverActionCard: 'shadow-xl',
+                userPreviewMainIdentifier: 'font-medium',
+            }
+          }} />
+          
+        </SignedIn> 
+        </div>
+        </div>
        
-        <Button className="bg-purple-600 hover:bg-purple-700 text-white">Get Started</Button>
-      </div>
+        
+      
 
       <Button variant="ghost" size="icon" className="md:hidden text-white">
         <Menu className="w-6 h-6" />
+        
+        
       </Button>
     </motion.nav>
   )
