@@ -5,7 +5,7 @@ import Process from "@/components/process"
 import Testimonials from "@/components/testimonials"
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-tl from-purple-900/20 to-purple-950/5 relative overflow-hidden">
+    <main className="min-h-screen  relative overflow-hidden">
    
       <div className="h-full w-full absolute inset-0 z-0">
         
