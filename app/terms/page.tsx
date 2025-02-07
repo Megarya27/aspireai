@@ -6,11 +6,11 @@ const TermsOfService = () => {
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-purple-950 text-gray-200">
       <div className="container mx-auto px-6">
         <div className="relative pt-40 pb-20">
-          {/* Background decorative elements */}
+          
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-3xl" />
           <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-purple-900/30" />
           
-          {/* Content */}
+       
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
