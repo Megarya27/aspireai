@@ -1,10 +1,7 @@
 import React from 'react'
 import { 
-    Rocket, 
     Users, 
     Brain,
-    ArrowRight,
-    Star,
     FileText 
   } from 'lucide-react';
 import Link from 'next/link';

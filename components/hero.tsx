@@ -1,11 +1,9 @@
 "use client"
 import { 
   Rocket, 
-  Users, 
-  Brain,
+
   ArrowRight,
-  Star,
-  FileText 
+
 } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
