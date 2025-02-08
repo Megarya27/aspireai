@@ -1,8 +1,8 @@
 import React from 'react'
-
+import ComingSoon from '../coming-soon'
 const page = () => {
   return (
-    <div>page</div>
+    <ComingSoon />
   )
 }
 
